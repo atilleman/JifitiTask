@@ -1,0 +1,35 @@
+<div class="flex">
+  <div>
+    <div class="tasks-container">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="full_name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.full_name}} </td>
+        </ng-container>
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+        <ng-container matColumnDef="phone">
+          <th mat-header-cell *matHeaderCellDef> Phone </th>
+          <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td>
+            <mat-cell *matCellDef="let row">
+              <button mat-raised-button color="primary" (click)="openEditDialog(row)">Edit</button>
+            </mat-cell>
+          </td>
+          
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div class="flex button">
+      <button mat-raised-button color="primary" (click)="openAddDialog()">Add new user</button>
+    </div>
+  </div>  
+</div>
+<app-add-edit-user></app-add-edit-user>

@@ -1,0 +1,32 @@
+<div class="card-dimentions" *ngIf="isReady">
+    <div class="button">
+        <button mat-raised-button color="primary" (click)="returnToList()">Back to list</button>
+    </div>
+    <div class="header">User Details</div>
+    <div class="pageDesc">{{pageDesc}}</div>
+    <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+        <div class="formStyle">
+            <div *ngFor="let control of formService.getFormStructure()">
+                <div>
+                    <label>{{control.label}}</label>
+                </div>
+                <div>
+                    <input [type]="control.type" [formControlName]="control.label">
+                </div>
+                <div>
+                    <span *ngIf="submitted && dynamicForm.get(control.label).errors || dynamicForm.get(control.label).invalid && 
+                           dynamicForm.get(control.label).touched" class="text-invalid">
+                        {{getErrorMessage(control)}}
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="flex button">
+            <button mat-raised-button color="primary" type="submit" (click)="saveData()">Save</button>
+        </div>
+    </form>
+    <div class="flex" *ngIf="isSave">
+        Data has been saved successfully!
+    </div>
+</div>
+

@@ -1,0 +1,42 @@
+.tasks-container {
+  display: flex;
+  height: 65vh;
+  overflow: auto;
+  border: 1px solid rgba(0, 0, 0, .12);
+}
+
+.pagingStyles {
+  display: flex; 
+  width: 100%; 
+  justify-content: flex-end;
+}
+
+span {
+  padding: 10px;
+  height: 50px;
+}
+
+select {
+  width: 100px; 
+  height: 21px;
+}
+
+.mat-header-cell {
+  width: 150px;
+  font-weight: bold;
+  font-size: 13px;
+  color: black;
+}
+
+.mat-cell {
+  font-size: 12px;
+  padding: 0;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, .12);
+  height: 88px;
+}
+
+
+
+

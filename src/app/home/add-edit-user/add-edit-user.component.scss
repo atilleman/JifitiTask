@@ -1,0 +1,30 @@
+.card-dimentions {
+    height: 60vh;
+    width: 600px;
+}
+
+.formStyle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+@media (max-width: 800px) {
+    .formStyle {
+        flex-direction: column;
+    }
+}
+
+.text-invalid {
+    color: #d33 !important;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, .12);
+    border-radius: 4px;
+}
